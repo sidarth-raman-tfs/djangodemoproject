@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta chatset="utf-8">
+        <title>Movie List</title>
+    </head>
+    <body>
+        <h1>All Movies</h1>
+        <ul>
+            {% for movie in movies %}
+            <li>
+                <strong>{{ movie.title }}</strong>: {{ movie.description }}
+            </li>
+            <!-- if its empty say no movies found -->
+            {% empty %}
+                <li>no movies found</li>
+
+            {% endfor %}
+        </ul>
+    </body>
+
+</html>

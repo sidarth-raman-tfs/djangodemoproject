@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Item One List</title>
+  </head>
+  <body>
+    <h1>All Items</h1>
+
+    <!-- ← Here’s where your loop goes: -->
+    <ul>
+      {% for item in items %}
+        <li>
+          <strong>{{ item.name }}</strong>: {{ item.description }}
+          [<a href="{% url 'itemone-update-html' item.pk %}">Edit</a>]
+          [<a href="{% url 'itemone-delete-html' item.pk %}">Delete</a>]
+        </li>
+      {% empty %}
+        <li>No items found.</li>
+      {% endfor %}
+    </ul>
+
+  </body>
+</html>
